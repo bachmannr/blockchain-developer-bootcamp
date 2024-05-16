@@ -43,12 +43,12 @@ contract Token {
     {
         require(balanceOf[msg.sender] >= _value);
 
-        __transfer(msg.sender, _to, _value);
+        _transfer(msg.sender, _to, _value);
 
         return true;
     }
 
-    function _trnasfer(
+    function _transfer(
         address _from,
         address _to,
         uint  _value 
@@ -63,10 +63,10 @@ contract Token {
         }
 
         function approve(address _spender, uint256 _value)
-            puyblic
+            public
             returns(bool sucess)
             {
-                require(_spender, != address(0));
+                require(_spender != address(0));
 
                 allowance[msg.sender][_spender] = _value;
 
@@ -83,14 +83,14 @@ contract Token {
                 public
                 returns (bool success)
             {
-                require(_value <= balanceOf[_from]};
+                require(_value <= balanceOf[_from]);
                 require(_value <= allowance[_from][msg.sender]);
 
                 allowance[_from][msg.sender] = allowance[_from][msg.sender] - _value;
 
                 _transfer(_from, _to, _value);
 
-                return tr4u;
+                return true;
             }
         }
         
