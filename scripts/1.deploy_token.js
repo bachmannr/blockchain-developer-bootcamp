@@ -14,7 +14,8 @@ async function main() {
 
   const token = await Token.deploy(); // deploy
   await token.deployed();
-  console.log(`Token Deployed to: ${token.address}`); // address not given
+  console.log(`Token Deployed to: ${token.address}`) 
+  // address not given
 }
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
